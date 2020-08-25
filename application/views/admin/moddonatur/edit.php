@@ -20,18 +20,18 @@
   <input type="text" name="pswd_donatur" class="form-control" placeholder="Masukan Password Donatur" value="<?php echo $data['pswd_donatur'] ?>" required oninvalid="this.setCustomValidity('Password Donatur Harus Di Isi')" oninput="setCustomValidity('')"><p></p>
 
   <label>No HP Donatur</label><br>
-  <input type="text" name="hp_donatur" class="form-control" placeholder="Masukan No HP Donatur" value="<?php echo $data['hp_donatur'] ?>" required oninvalid="this.setCustomValidity('No HP Donatur Harus Di Isi')" oninput="setCustomValidity('')"><p></p>
+  <input type="number" name="hp_donatur" class="form-control" placeholder="Masukan No HP Donatur" value="<?php echo $data['hp_donatur'] ?>" required oninvalid="this.setCustomValidity('No HP Donatur Harus Di Isi')" oninput="setCustomValidity('')"><p></p>
 
   <label>Email Donatur</label><br>
-  <input type="text" name="email_donatur" class="form-control" placeholder="Masukan Email Donatur" value="<?php echo $data['email_donatur'] ?>" required oninvalid="this.setCustomValidity('Email Donatur Harus Di Isi')" oninput="setCustomValidity('')"><p></p>
+  <input type="email" name="email_donatur" class="form-control" placeholder="Masukan Email Donatur" value="<?php echo $data['email_donatur'] ?>" required oninvalid="this.setCustomValidity('Email Donatur Harus Di Isi')" oninput="setCustomValidity('')"><p></p>
 
   <img src="<?php echo base_url('assets/img_donatur/'.$data['img_donatur']) ?>" width="400" height="300"><br>
   <label>Ganti Foto</label><br>
-  <input type="file" name="img_donatur"><p></p>
+  <input type="file" name="img_donatur" class="form-control"><p></p>
 
-  <div class="form-actions center">
-  <button class="btn btn-info" type="submit"><i class="ace-icon fa fa-check bigger-110"></i>Perbarui</button>
-  <a href="<?php echo site_url('donatur') ?>"><button class="btn btn-warning" type="button"><i class="ace-icon fa fa-undo bigger-110"></i>Batal</button></a>
+  <div class="form-actions text-center">
+  <a href="<?php echo site_url('donatur') ?>"><button class="btn btn-danger" type="button"><i class="ace-icon fa fa-undo bigger-110"></i> Batal</button></a>
+  <button class="btn btn-primary" type="submit"><i class="ace-icon fa fa-check bigger-110"></i> Perbarui</button>
   </div>
   </fieldset>
   </form>

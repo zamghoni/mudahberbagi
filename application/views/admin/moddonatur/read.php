@@ -46,11 +46,8 @@
                             						<td><?php echo $row['hp_donatur'] ?></td>
                             						<td><?php echo $row['email_donatur'] ?></td>
                                         <td>
-                            							<div class="btn-group">
-                            								<a href="<?php echo site_url('donatur/edit/' . $row['kode_donatur']) ?>" class="btn btn-info" title="ubah">Ubah</a>
-                            								<a href="<?php echo site_url('donatur/delete/' . $row['kode_donatur']) ?>" class="btn btn-danger" title="Delete" onclick="javascript: return confirm('Yakin Mau dihapus <?php echo $row['nama_donatur']; ?>')">Hapus
-                            								</a>
-                            							</div>
+																					<a href="<?php echo site_url('donatur/edit/' . $row['kode_donatur']) ?>" type="button" class="btn btn-custon-four btn-success btn-xs"><i class="fa fa-edit" aria-hidden="true" title="Edit"></i> Edit</a>
+																					<a href="<?php echo site_url('donatur/delete/' . $row['kode_donatur']) ?>" type="button" class="btn btn-custon-four btn-danger btn-xs" onclick="javascript: return confirm('Yakin Mau dihapus <?php echo $row['nama_donatur']; ?>')"><i class="fa fa-trash-o" aria-hidden="true" title="Hapus"></i> Hapus</a>
                             						</td>
 																		</tr>
 																		<?php
