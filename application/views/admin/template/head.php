@@ -88,7 +88,7 @@
         <nav id="sidebar" class="">
             <div class="sidebar-header">
                 <p></p>
-                <a href="<?php echo site_url('beranda') ?>"><img class="main-logo" src="<?php echo base_url(); ?>/assets/backend/images/icon/icon.png" alt="" /></a>
+                <a href="<?php echo site_url('beranda') ?>" target="_blank"><img class="main-logo" src="<?php echo base_url(); ?>/assets/backend/images/icon/icon.png" alt="" /></a>
                 <strong><a href="<?php echo site_url('beranda') ?>"><img src="<?php echo base_url(); ?>/assets/backend/img/logo/logosn.png" alt="" /></a></strong>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
