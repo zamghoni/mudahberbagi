@@ -31,6 +31,9 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/frontend/space.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/frontend/responsive.css">
 
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap.min.css">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="js/html5shiv.min.js"></script>
@@ -41,7 +44,7 @@
 <body>
 
     <!-- Preloader -->
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="loader-inner">
             <div class="sk-folding-cube">
                 <div class="sk-cube1 sk-cube"></div>
@@ -50,7 +53,7 @@
                 <div class="sk-cube3 sk-cube"></div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- header -->
     <div id="header--fixed" class="header">
         <div class="nav-top">

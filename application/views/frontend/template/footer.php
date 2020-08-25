@@ -69,6 +69,15 @@
 
 <!-- Custom JS -->
 <script type="text/javascript" src="<?php echo base_url(); ?>/assets/frontend/js/custom.js"></script>
+
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#example').DataTable();
+} );
+</script>
 </body>
 
 </html>
