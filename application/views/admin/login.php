@@ -73,27 +73,28 @@
         </a>
 			</div>
 			<div class="content-error">
-				<div class="hpanel"  style="border-style: solid; border-width: 2px; border-color:#f0f0f0; padding:20px; border-radius: 5px;>
-                    <div class="panel-body">
-                        <form method="POST" action="<?=site_url('auth/login')?>">
-                            <div class="form-group">
-                                <label class="control-label" for="username">Username</label>
-                                <input type="text" placeholder="username" title="Please enter you username" name="kd_admin" id="username" class="form-control" required oninvalid="this.setCustomValidity('Masukkan username disini')" oninput="setCustomValidity('')">
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label" for="password">Password</label>
-                                <input type="password" title="Please enter your password" placeholder="******" name="pswd_admin" id="password" class="form-control" required oninvalid="this.setCustomValidity('Masukkan password disini')" oninput="setCustomValidity('')">
-                            </div>
-                            <div class="checkbox login-checkbox">
-                                <label>
-										            <input type="checkbox" class="i-checks"> Remember me </label>
-                                <p class="help-block small">(if this is a private computer)</p>
-                            </div>
-                            <button class="btn btn-success btn-block loginbtn">Login</button>
-                        </form>
-                    </div>
-                </div>
+				<div class="hpanel"  style="border-style: solid; border-width: 2px; border-color:#f0f0f0; padding:20px; border-radius: 5px;">
+          <div class="panel-body">
+            <form method="POST" action="<?=site_url('auth/login')?>">
+              <div class="form-group">
+                <label class="control-label" for="username">Username</label>
+                <input type="text" placeholder="username" title="Please enter you username" name="kd_admin" id="username" class="form-control" required oninvalid="this.setCustomValidity('Masukkan username disini')" oninput="setCustomValidity('')">
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="password">Password</label>
+                <input type="password" title="Please enter your password" placeholder="******" name="pswd_admin" id="password" class="form-control" required oninvalid="this.setCustomValidity('Masukkan password disini')" oninput="setCustomValidity('')">
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="password"><input type="checkbox" name="i-checks" value="Remember me"> Remember me</label>
+              </div>
+              <button class="btn btn-success btn-block loginbtn">Login</button>
+            </form>
+          </div>
+        </div>
 			</div>
+      <div class="text-center m-b-md custom-login">
+        <a href="<?=site_url('beranda')?>">Kembali ke home</a>
+      </div>
 			<div class="text-center login-footer">
 				<p>Copyright © 2020. All rights reserved. Template by <a href="<?php echo base_url(); ?>/assets/backend/#/"><b>N2W Team</b></a></p>
 			</div>
