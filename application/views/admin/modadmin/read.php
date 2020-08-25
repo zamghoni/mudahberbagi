@@ -46,11 +46,8 @@
 																				<td><?php echo $row['hp_admin'] ?></td>
 																				<td><?php echo $row['email_admin'] ?></td>
 																				<td>
-																					<div class="btn-group">
-																						<a href="<?php echo site_url('admin/edit/' . $row['kd_admin']) ?>" class="btn btn-info" title="ubah">Ubah</a>
-																						<a href="<?php echo site_url('admin/delete/' . $row['kd_admin']) ?>" class="btn btn-danger" title="Delete" onclick="javascript: return confirm('Yakin Mau dihapus <?php echo $row['kd_admin']; ?>')">Hapus
-																						</a>
-																					</div>
+																					<a href="<?php echo site_url('admin/edit/' . $row['kd_admin']) ?>" type="button" class="btn btn-custon-four btn-success btn-xs"><i class="fa fa-edit" aria-hidden="true" title="Edit"></i> Edit</a>
+																					<a href="<?php echo site_url('admin/delete/' . $row['kd_admin']) ?>" type="button" class="btn btn-custon-four btn-danger btn-xs" onclick="javascript: return confirm('Yakin Mau dihapus <?php echo $row['kd_admin']; ?>')"><i class="fa fa-trash-o" aria-hidden="true" title="Hapus"></i> Hapus</a>																				
 																				</td>
 																		</tr>
 																		<?php

@@ -18,7 +18,7 @@
 <input type="text" name="nama_admin" class="form-control" placeholder="Masukan Nama admin" value="<?php echo $data['nama_admin'] ?>" required oninvalid="this.setCustomValidity('Nama admin Harus Di Isi')" oninput="setCustomValidity('')"><p></p>
 
 <label>HP</label><br>
-<input type="text" name="hp_admin" class="form-control" placeholder="Masukan HP admin" value="<?php echo $data['hp_admin'] ?>" required oninvalid="this.setCustomValidity('HP admin Harus Di Isi')" oninput="setCustomValidity('')" onKeyPress="return isNumberKey(event)"><p></p>
+<input type="number" name="hp_admin" class="form-control" placeholder="Masukan HP admin" value="<?php echo $data['hp_admin'] ?>" required oninvalid="this.setCustomValidity('HP admin Harus Di Isi')" oninput="setCustomValidity('')" onKeyPress="return isNumberKey(event)"><p></p>
 
 <label>Email</label><br>
 <input type="text" name="email_admin" class="form-control" placeholder="Masukan Email admin" value="<?php echo $data['email_admin'] ?>" required oninvalid="this.setCustomValidity('Email admin Harus Di Isi')" oninput="setCustomValidity('')"><p></p>

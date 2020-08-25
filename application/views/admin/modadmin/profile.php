@@ -116,7 +116,7 @@
                                                   <input type="text" class="form-control" name="nama_admin" value="<?php echo $data['nama_admin'] ?>">
                                               </div>
                                               <div class="form-group">
-                                                  <input type="text" class="form-control" name="hp_admin" value="<?php echo $data['hp_admin'] ?>">
+                                                  <input type="number" class="form-control" name="hp_admin" value="<?php echo $data['hp_admin'] ?>">
                                               </div>
                                               <div class="form-group">
                                                   <input type="text" class="form-control" name="email_admin" value="<?php echo $data['email_admin'] ?>">
