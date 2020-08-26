@@ -26,6 +26,7 @@
               <img src="<?php echo base_url('assets/img_admin/'.$data['img_admin']) ?>" width="250" height="250"><br><p></p>
               <label>Ganti Foto</label><br>
               <input type="file" class="form-control" name="img_admin"><p></p>
+              <input type="hidden" name="old_img_admin" value="<?=$data['img_admin']?>">
 
               <div class="form-actions text-center">
                 <a href="<?php echo site_url('admin') ?>"><button class="btn btn-danger" type="button"><i class="ace-icon fa fa-undo bigger-110"></i> Batal</button></a>

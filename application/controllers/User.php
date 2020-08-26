@@ -36,8 +36,6 @@ class User extends CI_Controller
 		$this->load->view($this->template . 'footer', $data);
 	}
 
-
-
 	public function uploadBukti($id_transaksi)
 	{
 		$data = array(
@@ -97,8 +95,6 @@ class User extends CI_Controller
 		$this->load->view('frontend/moduser/menu', $data);
 		$this->load->view('frontend/moduser/edit', $data);
 	}
-
-
 
 	public function simpan()
 	{

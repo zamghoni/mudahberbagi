@@ -105,7 +105,7 @@
                         <li>
                             <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="fa fa-newspaper-o icon-wrap"></span> <span class="mini-click-non">Berita</span></a>
                             <ul class="submenu-angle collapse" aria-expanded="false">
-                                <li><a title="Tambah Berita" href="<?php echo site_url('berita/create') ?>"><span class="mini-sub-pro">Tambah Berita</span></a></li>
+                                <li><a title="Tambah Berita" href="<?php echo site_url('berita/create') ?>"><span class="mini-sub-pro">Buat Berita</span></a></li>
                                 <li><a title="Berita" href="<?php echo site_url('berita') ?>"><span class="mini-sub-pro">Berita</span></a></li>
                                 <li><a title="Kategori" href="<?php echo site_url('kategori') ?>"><span class="mini-sub-pro">Kategori</span></a></li>
                             </ul>

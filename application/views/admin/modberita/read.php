@@ -29,6 +29,7 @@
 								<th>Judul</th>
 								<th>Tanggal</th>
 								<th>Kategori</th>
+								<th>Gambar</th>
 								<th>Status</th>
 								<th>Aksi</th>
 							</tr>
@@ -46,6 +47,13 @@
 									echo ' ';
 									echo $row['jam_berita'] ?></td>
 									<td><?php echo $row['nama_kategori'] ?></td>
+									<td>
+										<?php if ($row['img_berita'] != null){ ?>
+											<img src="<?=base_url('')?>assets/img_berita/<?=$row['img_berita']?>" alt="Img Berita" style="height:80px">
+										<?php }else{ ?>
+											<span class="badge badge-danger">No Image</span>
+										<?php } ?>
+									</td>
 									<td>
 										<?php
 										if ($row['st_berita'] == 'Publik') {

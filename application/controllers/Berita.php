@@ -111,8 +111,9 @@ class Berita extends CI_Controller
 					'tgl_berita' => $this->input->post('tgl_berita'),
 					'jam_berita' => $this->input->post('jam_berita'),
 					'kd_admin'	=> $this->session->userdata('kd_admin'),
-					'img_berita'			=> $img_berita
+					'img_berita'			=> $img_berita,
 				);
+				unlink("./assets/img_berita/".$this->input->post('old_img_berita'));
 			}
 		} else {
 			$data = array(
@@ -141,6 +142,10 @@ class Berita extends CI_Controller
 	public function delete()
 	{
 		$id_berita = $this->uri->segment(3);
+		$param = $this->M_berita->GetAll($id_berita)->row();
+		if ($param->img_berita != null) {
+			unlink("./assets/img_berita/".$param->img_berita);
+		}
 		$data = array('id_berita' => $id_berita);
 		$this->M_berita->delete($data);
 		redirect($this->redirect, 'refresh');

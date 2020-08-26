@@ -122,6 +122,7 @@
                             <input type="text" class="form-control" name="email_admin" value="<?php echo $data['email_admin'] ?>">
                           </div>
                           <input type="file" class="form-control" name="img_admin">
+                          <input type="hidden" name="old_img_admin" value="<?=$data['img_admin']?>">
                         </div>
                       </div>
                       <div class="row" style="margin-top:10px">

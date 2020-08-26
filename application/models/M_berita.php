@@ -6,12 +6,15 @@ class M_berita extends CI_Model
 	private $table 	= 'berita';
 	private $pk 	= 'id_berita';
 
-	public function GetAll()
+	public function GetAll($id=null)
 	{
 		$this->db->order_by($this->pk, 'desc');
 		$this->db->order_by('tgl_berita', 'desc');
 		//$this->db->join('admin','berita.kd_admin=admin.kd_admin');
 		$this->db->join('kategori', 'berita.id_kategori=kategori.id_kategori');
+		if ($id != null) {
+			$this->db->where('id_berita', $id);
+		}
 		return $this->db->get($this->table);
 	}
 

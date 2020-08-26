@@ -88,6 +88,7 @@ class Admin extends CI_Controller {
 				'hp_admin'=> $this->input->post('hp_admin'),
 				'img_admin'			=> $img_admin
 			);
+			unlink("./assets/img_admin/".$this->input->post('old_img_admin'));
 		}
 	}
 	else{
@@ -103,6 +104,10 @@ class Admin extends CI_Controller {
 
 	public function delete(){
 		$kd_admin = $this->uri->segment(3);
+		$param = $this->M_admin->GetAll($kd_admin)->row();
+		if ($param->img_admin != null) {
+			unlink("./assets/img_admin/".$param->img_admin);
+		}
 		$data = array('kd_admin' => $kd_admin);
 		$this->M_admin->delete($data);
 		redirect($this->redirect,'refresh');
@@ -141,6 +146,7 @@ class Admin extends CI_Controller {
 				'hp_admin'=> $this->input->post('hp_admin'),
 				'img_admin'			=> $img_admin
 			);
+			unlink("./assets/img_admin/".$this->input->post('old_img_admin'));
 		}
 	}
 	else{

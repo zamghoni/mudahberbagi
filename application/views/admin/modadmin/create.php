@@ -27,7 +27,7 @@
               <input type="password" name="pswd_admin" class="form-control" placeholder="Masukan Kata Sandi" value="" required oninvalid="this.setCustomValidity('Password admin Harus Di Isi')" oninput="setCustomValidity('')"><p></p>
 
               <label>Foto Admin</label><br>
-              <input type="file" class="form-control" name="img_admin" required><p></p>
+              <input type="file" class="form-control" name="img_admin"><p></p>
 
               <div class="form-actions text-center">
                 <a href="<?php echo site_url('admin') ?>"><button class="btn btn-danger" type="button"><i class="ace-icon fa fa-undo bigger-110"></i> Batal</button></a>

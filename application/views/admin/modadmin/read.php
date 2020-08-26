@@ -30,6 +30,7 @@
 								<th>Nama</th>
 								<th>HP</th>
 								<th>Email</th>
+								<th>Foto</th>
 								<th>Aksi</th>
 							</tr>
 						</thead>
@@ -45,6 +46,9 @@
 									<td><?php echo $row['nama_admin'] ?></td>
 									<td><?php echo $row['hp_admin'] ?></td>
 									<td><?php echo $row['email_admin'] ?></td>
+									<td>
+											<img src="<?=base_url('')?>assets/img_admin/<?=$row['img_admin']?>" alt="Img Admin" style="height:50px">									
+									</td>
 									<td>
 										<a href="<?php echo site_url('admin/edit/' . $row['kd_admin']) ?>" type="button" class="btn btn-custon-four btn-success btn-xs"><i class="fa fa-edit" aria-hidden="true" title="Edit"></i> Edit</a>
 										<a href="<?php echo site_url('admin/delete/' . $row['kd_admin']) ?>" type="button" class="btn btn-custon-four btn-danger btn-xs" onclick="javascript: return confirm('Yakin Mau dihapus <?php echo $row['kd_admin']; ?>')"><i class="fa fa-trash-o" aria-hidden="true" title="Hapus"></i> Hapus</a>

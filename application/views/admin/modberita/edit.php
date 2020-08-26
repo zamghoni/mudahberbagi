@@ -38,6 +38,7 @@
               <img src="<?php echo base_url('assets/img_berita/'.$data['img_berita']) ?>" width="400" height="300"><br><p></p>
               <label>Ganti Foto</label><br>
               <input type="file" name="img_berita" class="form-control"><p></p>
+              <input type="hidden" name="old_img_berita" value="<?=$data['img_berita']?>">
 
               <div class="form-actions text-center">
                 <a href="<?php echo site_url('berita') ?>"><button class="btn btn-danger" type="button"><i class="ace-icon fa fa-undo bigger-110"></i> Batal</button></a>

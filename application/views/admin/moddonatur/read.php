@@ -30,6 +30,7 @@
                               					<th>Nama Donatur</th>
                               					<th>No HP Donatur</th>
                               					<th>Email Donatur</th>
+																				<th>Foto</th>
                               					<th>Aksi</th>
 																		</tr>
 																</thead>
@@ -45,6 +46,13 @@
                             						<td><?php echo $row['nama_donatur'] ?></td>
                             						<td><?php echo $row['hp_donatur'] ?></td>
                             						<td><?php echo $row['email_donatur'] ?></td>
+																				<td>
+																					<?php if ($row['img_donatur'] != null){ ?>
+																						<img src="<?=base_url('')?>assets/img_donatur/<?=$row['img_donatur']?>" alt="Img Donatur" style="height:100px">
+																					<?php } else { ?>
+																						<span class="badge badge-danger">No Image</span>
+																					<?php } ?>
+																				</td>
                                         <td>
 																					<a href="<?php echo site_url('donatur/edit/' . $row['kode_donatur']) ?>" type="button" class="btn btn-custon-four btn-success btn-xs"><i class="fa fa-edit" aria-hidden="true" title="Edit"></i> Edit</a>
 																					<a href="<?php echo site_url('donatur/delete/' . $row['kode_donatur']) ?>" type="button" class="btn btn-custon-four btn-danger btn-xs" onclick="javascript: return confirm('Yakin Mau dihapus <?php echo $row['nama_donatur']; ?>')"><i class="fa fa-trash-o" aria-hidden="true" title="Hapus"></i> Hapus</a>
