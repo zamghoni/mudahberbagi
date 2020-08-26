@@ -45,6 +45,7 @@ class Kategori extends CI_Controller {
 			'nama_kategori'=> $this->input->post('nama_kategori')
 			);
 		$this->M_kategori->save($data);
+		$this->session->set_flashdata('success', 'Data berhasil disimpan');
 		redirect($this->redirect,'refresh');
 	}
 
@@ -66,6 +67,7 @@ class Kategori extends CI_Controller {
 			'nama_kategori'=> $this->input->post('nama_kategori')
 			);
 		$this->M_kategori->update($kd,$data);
+		$this->session->set_flashdata('success', 'Data berhasil diubah');
 		redirect($this->redirect,'refresh');
 	}
 
@@ -73,6 +75,7 @@ class Kategori extends CI_Controller {
 		$id_kategori = $this->uri->segment(3);
 		$data = array('id_kategori' => $id_kategori);
 		$this->M_kategori->delete($data);
+		$this->session->set_flashdata('success', 'Data berhasil dihapus');
 		redirect($this->redirect,'refresh');
 	}
 

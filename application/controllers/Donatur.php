@@ -62,6 +62,7 @@ class Donatur extends CI_Controller {
 					'img_donatur' => 	$img_donatur
 				);
 				$this->M_donatur->save($data);
+				$this->session->set_flashdata('success', 'Data berhasil disimpan');
 				redirect($this->redirect, 'refresh');
 			}
 		}
@@ -114,6 +115,7 @@ class Donatur extends CI_Controller {
 			$data['pswd_donatur'] = md5($this->input->post('pswd_donatur'));
 		}
 		$this->M_donatur->update($kd, $data);
+		$this->session->set_flashdata('success', 'Data berhasil diubah');
 		redirect($this->redirect, 'refresh');
 	}
 
@@ -126,6 +128,7 @@ class Donatur extends CI_Controller {
 		}
 		$data = array('kode_donatur' => $kode_donatur);
 		$this->M_donatur->delete($data);
+		$this->session->set_flashdata('success', 'Data berhasil dihapus');
 		redirect($this->redirect,'refresh');
 	}
 

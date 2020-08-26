@@ -10,7 +10,7 @@
 					<div class="main-sparkline13-hd">
 						<h1><?php echo $judul ?></h1>
 					</div>
-				</div>
+				</div>				
 				<div class="sparkline13-graph">
 					<div class="datatable-dashv1-list custom-datatable-overright">
 						<div id="toolbar">
@@ -47,7 +47,7 @@
 									<td><?php echo $row['hp_admin'] ?></td>
 									<td><?php echo $row['email_admin'] ?></td>
 									<td>
-											<img src="<?=base_url('')?>assets/img_admin/<?=$row['img_admin']?>" alt="Img Admin" style="height:50px">									
+											<img src="<?=base_url('')?>assets/img_admin/<?=$row['img_admin']?>" alt="Img Admin" style="height:50px">
 									</td>
 									<td>
 										<a href="<?php echo site_url('admin/edit/' . $row['kd_admin']) ?>" type="button" class="btn btn-custon-four btn-success btn-xs"><i class="fa fa-edit" aria-hidden="true" title="Edit"></i> Edit</a>

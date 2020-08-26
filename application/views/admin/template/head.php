@@ -57,6 +57,10 @@
 		============================================ -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/backend/css/calendar/fullcalendar.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/backend/css/calendar/fullcalendar.print.min.css">
+    <!-- notifications CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/backend/css/notifications/Lobibox.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/backend/css/notifications/notifications.css">
     <!-- style CSS
 		============================================ -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/backend/style.css">
@@ -198,8 +202,8 @@
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
                                                         <li><a href="<?php echo site_url('admin/profile/'.$this->session->userdata('kd_admin')) ?>"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a>
                                                         </li>
-                                                        <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
-                                                        </li>
+                                                        <!-- <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
+                                                        </li> -->
                                                         <li><a href="<?php echo site_url('auth/logout') ?>"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a>
                                                         </li>
                                                     </ul>

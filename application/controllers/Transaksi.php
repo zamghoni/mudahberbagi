@@ -93,6 +93,7 @@ class Transaksi extends CI_Controller
 			'status_pembayaran' => $this->input->post('status_pembayaran')
 		);
 		$this->M_transaksi->save($data);
+		$this->session->set_flashdata('success', 'Data berhasil disimpan');
 		redirect($this->redirect, 'refresh');
 	}
 
@@ -114,6 +115,7 @@ class Transaksi extends CI_Controller
 		$id_transaksi = $this->uri->segment(3);
 		$data = array('id_transaksi' => $id_transaksi);
 		$this->M_transaksi->delete($data);
+		$this->session->set_flashdata('success', 'Data berhasil dihapus');
 		redirect($this->redirect, 'refresh');
 	}
 }

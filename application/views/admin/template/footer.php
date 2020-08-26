@@ -50,6 +50,22 @@
 ============================================ -->
 <script src="<?php echo base_url(); ?>/assets/backend/js/metisMenu/metisMenu.min.js"></script>
 <script src="<?php echo base_url(); ?>/assets/backend/js/metisMenu/metisMenu-active.js"></script>
+<!-- notification JS
+============================================ -->
+<script src="<?php echo base_url(); ?>/assets/backend/js/notifications/Lobibox.js"></script>
+<script src="<?php echo base_url(); ?>/assets/backend/js/notifications/notification-active.js"></script>
+<?php if ($this->session->has_userdata('success')): ?>
+  <script type="text/javascript">
+  addEventListener('load',function myfunction(){
+    Lobibox.notify('success', {
+        position: 'top right',
+        showClass: 'rollIn',
+        hideClass: 'rollOut',
+        msg: '<?=$this->session->flashdata('success');?>'
+    });
+        });
+  </script>
+<?php endif; ?>
 <!-- morrisjs JS
 ============================================ -->
 <script src="<?php echo base_url(); ?>/assets/backend/js/morrisjs/raphael-min.js"></script>

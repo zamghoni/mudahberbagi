@@ -70,6 +70,7 @@ class Berita extends CI_Controller
 					'img_berita' => 	$img_berita
 				);
 				$this->M_berita->save($data);
+				$this->session->set_flashdata('success', 'Data berhasil disimpan');
 				redirect($this->redirect, 'refresh');
 			}
 		}
@@ -126,6 +127,7 @@ class Berita extends CI_Controller
 			);
 		}
 		$this->M_berita->update($kd, $data);
+		$this->session->set_flashdata('success', 'Data berhasil diubah');
 		redirect($this->redirect, 'refresh');
 	}
 
@@ -148,6 +150,7 @@ class Berita extends CI_Controller
 		}
 		$data = array('id_berita' => $id_berita);
 		$this->M_berita->delete($data);
+		$this->session->set_flashdata('success', 'Data berhasil dihapus');
 		redirect($this->redirect, 'refresh');
 	}
 }

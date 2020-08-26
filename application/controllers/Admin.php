@@ -52,6 +52,7 @@ class Admin extends CI_Controller {
 			'pswd_admin'=> md5($this->input->post('pswd_admin'))
 		);
 		$this->M_admin->save($data);
+		$this->session->set_flashdata('success', 'Data berhasil disimpan');
 		redirect($this->redirect,'refresh');
 
 	}
@@ -99,6 +100,7 @@ class Admin extends CI_Controller {
 		);
 	}
 		$this->M_admin->update($kd,$data);
+		$this->session->set_flashdata('success', 'Data berhasil diubah');
 		redirect($this->redirect,'refresh');
 	}
 
@@ -110,6 +112,7 @@ class Admin extends CI_Controller {
 		}
 		$data = array('kd_admin' => $kd_admin);
 		$this->M_admin->delete($data);
+		$this->session->set_flashdata('success', 'Data berhasil dihapus');
 		redirect($this->redirect,'refresh');
 	}
 
@@ -157,6 +160,7 @@ class Admin extends CI_Controller {
 		);
 	}
 		$this->M_admin->update($kd,$data);
+		$this->session->set_flashdata('success', 'Data berhasil diubah');
 		redirect('admin/profile/'.$kd);
 	}
 

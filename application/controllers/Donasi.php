@@ -93,6 +93,7 @@ class Donasi extends CI_Controller
 					'img_donasi' => 	$img_donasi
 				);
 				$this->M_donasi->save($data);
+				$this->session->set_flashdata('success', 'Data berhasil disimpan');
 				redirect($this->redirect, 'refresh');
 			}
 		}
@@ -148,6 +149,7 @@ class Donasi extends CI_Controller
 			);
 		}
 		$this->M_donasi->update($kd, $data);
+		$this->session->set_flashdata('success', 'Data berhasil diubah');
 		redirect($this->redirect, 'refresh');
 	}
 
@@ -166,6 +168,7 @@ class Donasi extends CI_Controller
 		$id_donasi = $this->uri->segment(3);
 		$data = array('id_donasi' => $id_donasi);
 		$this->M_donasi->delete($data);
+		$this->session->set_flashdata('success', 'Data berhasil dihapus');
 		redirect($this->redirect, 'refresh');
 	}
 }
