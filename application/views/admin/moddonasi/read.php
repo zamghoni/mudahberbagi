@@ -55,11 +55,11 @@
 										<?php
 										if ($row['st_donasi'] == 'Publik') {
 											?>
-											<a href="<?php echo site_url('donasi/status/' . $row['id_donasi']) . '/' . 'Blokir'; ?>" title="Ubah status ke Blok" class="btn btn-xs btn-warning"><i class="ace-icon fa fa-eye-slash"></i> Blokir</a>
+											<a href="<?php echo site_url('donasi/status/' . $row['id_donasi']) . '/' . 'Blokir'; ?>" title="Ubah status ke Blok" class="btn btn-xs btn-warning"><i class="ace-icon fa fa-ban"></i> Blokir</a>
 											<?php
 										} elseif ($row['st_donasi'] == 'Blokir') {
 											?>
-											<a href="<?php echo site_url('donasi/status/' . $row['id_donasi']) . '/' . 'Publik'; ?>" title="Ubah status ke Publik" class="btn btn-xs btn-info"><i class="ace-icon fa fa-eye"></i> Publish</a>
+											<a href="<?php echo site_url('donasi/status/' . $row['id_donasi']) . '/' . 'Publik'; ?>" title="Ubah status ke Publik" class="btn btn-xs btn-info"><i class="ace-icon fa fa-paper-plane"></i> Publish</a>
 											<?php
 										}
 										?>

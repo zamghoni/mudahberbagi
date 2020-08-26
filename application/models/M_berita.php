@@ -15,6 +15,15 @@ class M_berita extends CI_Model
 		return $this->db->get($this->table);
 	}
 
+	public function Getpublik()
+	{
+		$this->db->order_by($this->pk, 'desc');
+		$this->db->order_by('tgl_berita', 'desc');
+		$this->db->join('kategori', 'berita.id_kategori=kategori.id_kategori');
+		$this->db->where('st_berita', 'Publik');
+		return $this->db->get($this->table);
+	}
+
 	public function GetBeritaLain($id)
 	{
 		$q = $this->db->query("SELECT * FROM berita WHERE id_berita NOT IN ('$id')");
@@ -66,4 +75,11 @@ class M_berita extends CI_Model
 		$this->db->join('kategori', 'berita.id_kategori=kategori.id_kategori');
 		return $this->db->get($this->table);
 	}
+
+	function berita_perhalaman($offset,$limit)
+  {
+		$hsl=$this->db->query("SELECT * FROM `berita` LEFT JOIN `kategori` ON `kategori`.`id_kategori`=`berita`.`id_kategori` WHERE `berita`.`st_berita`='Publik' ORDER BY `berita`.`tgl_berita` DESC limit $offset,$limit");
+		return $hsl;
+	}
+
 }

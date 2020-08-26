@@ -3,6 +3,7 @@
     <div class="widget-box">
       <div class="widget-header">
         <h4 class="widget-title"><?php echo $sub; ?></h4>
+        <hr>
       </div>
       <div class="widget-body">
         <div class="widget-main no-padding">
@@ -28,12 +29,13 @@
                   <option value="<?php echo $r['id_kategori'] ?>"><?php echo $r['nama_kategori']; ?></option>
                 <?php } ?>
               </select><p></p>
-
+              <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
               <label>Isi Donasi</label><br>
-              <textarea name="isi_donasi" class="form-control ckeditor" id="ckeditor" placeholder="isi Donasi" rows="5" required><?php echo $data['isi_donasi'] ?></textarea>
+              <textarea name="isi_donasi" class="form-control" placeholder="isi Donasi" rows="5" required><?php echo $data['isi_donasi'] ?></textarea>
+              <script>CKEDITOR.replace( 'isi_donasi' );</script>
               <p></p>
 
-              <img src="<?php echo base_url('assets/img_donasi/'.$data['img_donasi']) ?>" width="400" height="300"><br>
+              <img src="<?php echo base_url('assets/img_donasi/'.$data['img_donasi']) ?>" width="400" height="300"><br><p></p>
               <label>Ganti Foto</label><br>
               <input type="file" name="img_donasi" class="form-control"><p></p>
 

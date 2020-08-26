@@ -59,7 +59,7 @@ class beranda extends CI_Controller
 			// 'donasi' => $q,
 			'halaman' => $this->pagination->create_links(),
 			'donasi' => $this->M_beranda->donasi_perhalaman($offset,$limit),
-			'berita' => $this->M_berita->GetAll()->result_array(),
+			'berita' => $this->M_beranda->Getpublik()->result_array(),
 			'total_donatur' => $this->M_donatur->CountDonatur(),
 			'total_donasi' => $this->M_donatur->CountDonasi()->row_array(),
 			'target_donasi' => $this->M_donatur->CountTarget()->row_array()

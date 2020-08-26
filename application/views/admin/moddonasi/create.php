@@ -3,6 +3,7 @@
     <div class="widget-box">
       <div class="widget-header">
         <h4 class="widget-title"><?php echo $sub; ?></h4>
+        <hr>
       </div>
       <div class="widget-body">
         <div class="widget-main no-padding">
@@ -24,11 +25,13 @@
               </select><p></p>
 
               <label>Target Donasi</label><br>
-              <input type="text" name="target_donasi" class="form-control" placeholder="Masukan Target Donasi" value="" required oninvalid="this.setCustomValidity('Target Donasi Harus Di Isi')" oninput="setCustomValidity('')"><p></p>
+              <input type="number" name="target_donasi" class="form-control" placeholder="Masukan Target Donasi" value="" required oninvalid="this.setCustomValidity('Target Donasi Harus Di Isi')" oninput="setCustomValidity('')"><p></p>
 
+              <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
               <label>Isi Donasi</label><br>
-              <textarea name="isi_donasi" class="form-control" id="ckeditor" placeholder="isi Donasi" required oninvalid="this.setCustomValidity('Judul Donasi Harus Di Isi')" oninput="setCustomValidity('')" rows="4"></textarea>
-
+              <textarea name="isi_donasi" class="form-control" id="ckeditor" placeholder="isi Donasi" required oninvalid="this.setCustomValidity('Judul Donasi Harus Di Isi')" oninput="setCustomValidity('')" rows="4"></textarea><p></p>
+              <script>CKEDITOR.replace( 'isi_donasi' );</script>
+              
               <label>Foto Donasi</label><br>
               <input type="file" name="img_donasi" class="form-control" required oninvalid="this.setCustomValidity('Judul Donasi Harus Di Isi')" oninput="setCustomValidity('')"><p></p>
 

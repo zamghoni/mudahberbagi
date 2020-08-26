@@ -28,52 +28,52 @@
   <!-- EndTable -->
 </div>
 <script>
-  <?php
-  if ($rumah_dakwah['total'] == null) {
-    $total = 0;
-  } else {
-    $total = $rumah_dakwah['total'];
-  }
-  ?>
-  var max = '<?= $rumah_dakwah['target_donasi']; ?>';
-  var val = '<?= $total; ?>';
-  var val = parseInt(val, 10);
-  // Build the chart
-  Highcharts.chart('rumah_dakwah', {
-    chart: {
-      plotBackgroundColor: null,
-      plotBorderWidth: null,
-      plotShadow: false,
-      type: 'pie'
-    },
-    title: {
-      text: 'Rumah Dakwah'
-    },
-    tooltip: {
-      pointFormat: '<b>{point.y}</b> / <b>{point.percentage:.1f}%</b>'
-    },
-    plotOptions: {
-      pie: {
-        allowPointSelect: true,
-        cursor: 'pointer',
-        dataLabels: {
-          enabled: false
-        },
-        showInLegend: true
-      }
-    },
-    series: [{
-      name: 'Brands',
-      colorByPoint: true,
-      data: [{
-        name: 'Tercapai',
-        y: val
-      }, {
-        name: 'belum tercapai',
-        y: max - val
-      }]
+<?php
+if ($rumah_dakwah['total'] == null) {
+  $total = 0;
+} else {
+  $total = $rumah_dakwah['total'];
+}
+?>
+var max = '<?= $rumah_dakwah['target_donasi']; ?>';
+var val = '<?= $total; ?>';
+var val = parseInt(val, 10);
+// Build the chart
+Highcharts.chart('rumah_dakwah', {
+  chart: {
+    plotBackgroundColor: null,
+    plotBorderWidth: null,
+    plotShadow: false,
+    type: 'pie'
+  },
+  title: {
+    text: 'Rumah Dakwah'
+  },
+  tooltip: {
+    pointFormat: '<b>{point.y}</b> / <b>{point.percentage:.1f}%</b>'
+  },
+  plotOptions: {
+    pie: {
+      allowPointSelect: true,
+      cursor: 'pointer',
+      dataLabels: {
+        enabled: false
+      },
+      showInLegend: true
+    }
+  },
+  series: [{
+    name: 'Brands',
+    colorByPoint: true,
+    data: [{
+      name: 'Tercapai',
+      y: val
+    }, {
+      name: 'belum tercapai',
+      y: max - val
     }]
-  });
+  }]
+});
 </script>
 <script>
   <?php

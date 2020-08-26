@@ -6,6 +6,8 @@
 				<div class="sparkline13-hd">
 					<div class="main-sparkline13-hd">
 						<h1><?php echo $judul ?></h1>
+						<br>
+						<p></p>
 					</div>
 				</div>
 				<div class="sparkline13-graph">

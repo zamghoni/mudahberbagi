@@ -3,6 +3,7 @@
     <div class="widget-box">
       <div class="widget-header">
         <h4 class="widget-title"><?php echo $sub; ?></h4>
+        <hr>
       </div>
       <div class="widget-body">
         <div class="widget-main no-padding">

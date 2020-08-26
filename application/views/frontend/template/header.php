@@ -86,7 +86,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="<?php echo site_url('beranda'); ?>"><img class="retina" src="<?php echo base_url(); ?>assets/frontend/images/icon.png" alt="logo"></a>
+                        <a class="navbar-brand" href="<?php echo site_url('beranda'); ?>"><img class="retina" src="<?php echo base_url(); ?>assets/frontend/images/icon.png" alt="logo" width="80%"></a>
                     </div>
                     <div class="collapse navbar-collapse" id="main-navbar">
                         <ul class="nav navbar-nav navbar-left">

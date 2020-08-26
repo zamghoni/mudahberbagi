@@ -78,7 +78,7 @@
             <form method="POST" action="<?=site_url('auth/login')?>">
               <div class="form-group">
                 <label class="control-label" for="username">Username</label>
-                <input type="text" placeholder="username" title="Please enter you username" name="kd_admin" id="username" class="form-control" required oninvalid="this.setCustomValidity('Masukkan username disini')" oninput="setCustomValidity('')">
+                <input type="text" placeholder="username" title="Please enter you username" name="kd_admin" id="username" class="form-control" required autofocus oninvalid="this.setCustomValidity('Masukkan username disini')" oninput="setCustomValidity('')">
               </div>
               <div class="form-group">
                 <label class="control-label" for="password">Password</label>

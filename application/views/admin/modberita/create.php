@@ -3,6 +3,7 @@
     <div class="widget-box">
       <div class="widget-header">
         <h4 class="widget-title"><?php echo $sub; ?></h4>
+        <hr>
       </div>
       <div class="widget-body">
         <div class="widget-main no-padding">
@@ -23,9 +24,12 @@
                 <?php } ?>
               </select><p></p>
 
+              <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 
               <label>Isi Berita</label><br>
-              <textarea name="isi_berita" class="form-control ckeditor" id="ckeditor" placeholder="isi Berita" required oninvalid="this.setCustomValidity('Isi Berita Harus Di Isi')" oninput="setCustomValidity('')"></textarea>
+              <textarea name="isi_berita" class="form-control" placeholder="isi Berita" required oninvalid="this.setCustomValidity('Isi Berita Harus Di Isi')" oninput="setCustomValidity('')"></textarea><p></p>
+
+              <script>CKEDITOR.replace( 'isi_berita' );</script>
 
               <label>Foto Berita</label><br>
               <input type="file" name="img_berita" class="form-control" required oninvalid="this.setCustomValidity('Foto Berita Harus Di Isi')" oninput="setCustomValidity('')"><p></p>

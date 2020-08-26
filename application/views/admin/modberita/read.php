@@ -50,31 +50,31 @@
 										<?php
 										if ($row['st_berita'] == 'Publik') {
 											?>
-											<a href="<?php echo site_url('berita/status/' . $row['id_berita']) . '/' . 'Blokir'; ?>" title="Ubah status ke Blok" class="btn btn-xs btn-warning"><i class="ace-icon fa fa-eye-slash"></i> Blokir</a>
-												<?php
-											} elseif ($row['st_berita'] == 'Blokir') {
-												?>
-												<a href="<?php echo site_url('berita/status/' . $row['id_berita']) . '/' . 'Publik'; ?>" title="Ubah status ke Publik" class="btn btn-xs btn-info"><i class="ace-icon fa fa-eye"></i> Publik</a>
-												<?php
-											}
+											<a href="<?php echo site_url('berita/status/' . $row['id_berita']) . '/' . 'Blokir'; ?>" title="Ubah status ke Blok" class="btn btn-xs btn-warning"><i class="ace-icon fa fa-ban"></i> Blokir</a>
+											<?php
+										} elseif ($row['st_berita'] == 'Blokir') {
 											?>
-											</td>
+											<a href="<?php echo site_url('berita/status/' . $row['id_berita']) . '/' . 'Publik'; ?>" title="Ubah status ke Publik" class="btn btn-xs btn-info"><i class="ace-icon fa fa-paper-plane"></i> Publik</a>
+											<?php
+										}
+										?>
+									</td>
 									<td>
 										<a href="<?php echo site_url('berita/edit/' . $row['id_berita']) ?>" title="Ubah" class="btn btn-xs btn-success"><i class="ace-icon fa fa-pencil"></i> Edit</a>
-											<a href="<?php echo site_url('berita/delete/' . $row['id_berita']) ?>" title="Delete" onclick="javascript: return confirm('Yakin Mau dihapus <?php echo $row['judul_berita']; ?>')" class="btn btn-xs btn-danger"><i class="ace-icon fa fa-trash-o"></i> Hapus</a>
+										<a href="<?php echo site_url('berita/delete/' . $row['id_berita']) ?>" title="Delete" onclick="javascript: return confirm('Yakin Mau dihapus <?php echo $row['judul_berita']; ?>')" class="btn btn-xs btn-danger"><i class="ace-icon fa fa-trash-o"></i> Hapus</a>
 
-											</td>
-										</tr>
-										<?php
-										$no++;
-									}
-									?>
-								</tbody>
-							</table>
-						</div>
-					</div>
+									</td>
+								</tr>
+								<?php
+								$no++;
+							}
+							?>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- Static Table End -->
+</div>
+</div>
+<!-- Static Table End -->

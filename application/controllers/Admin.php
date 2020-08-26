@@ -21,7 +21,7 @@ class Admin extends CI_Controller {
 		$q = $this->M_admin->GetAll();
 	}
 	$data = array(
-		'judul'	=> "DATA ADMIN",
+		'judul'	=> "DATA Admin",
 		'sub'	=> "Lihat Admin",
 		'data'=> $q
 	);
@@ -33,7 +33,7 @@ class Admin extends CI_Controller {
 
 	public function create(){
 		$data = array(
-			'judul'	=> "DATA ADMIN",
+			'judul'	=> "DATA Admin",
 			'sub'	=> "Tambah Admin",
 			'data' 	=> ''
 			);
@@ -59,7 +59,7 @@ class Admin extends CI_Controller {
 	public function edit(){
 		$kd   = $this->uri->segment(3);
 		$data = array(
-			'judul'	=> "DATA ADMIN",
+			'judul'	=> "DATA Admin",
 			'sub'	=> "Ubah Admin",
 			'data' 	=> $this->M_admin->edit($kd)
 			);
@@ -112,7 +112,7 @@ class Admin extends CI_Controller {
 	{
 			$kd = $this->uri->segment(3);
 			$data = array(
-				'judul'	=> "DATA ADMIN",
+				'judul'	=> "DATA Admin",
 				'sub'	=> "Profile",
 				'data' 	=> $this->M_admin->profile($kd)
 			);

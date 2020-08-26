@@ -7,7 +7,7 @@ class M_beranda extends CI_Model
 	function donasiberanda()
 	{
 		$q = $this->db->query("SELECT donasi.*,SUM(transaksi.nominal) as total FROM `donasi` LEFT JOIN `transaksi` ON `transaksi`.`id_donasi`=`donasi`.`id_donasi` WHERE `donasi`.`st_donasi`='Publik' GROUP BY `donasi`.`id_donasi`");
-		
+
 		return $q;
 	}
 
@@ -38,8 +38,17 @@ class M_beranda extends CI_Model
 	function donasi_perhalaman($offset,$limit)
   {
 		$hsl=$this->db->query("SELECT donasi.*,SUM(transaksi.nominal) as total FROM `donasi` LEFT JOIN `transaksi` ON `transaksi`.`id_donasi`=`donasi`.`id_donasi` WHERE `donasi`.`st_donasi`='Publik' GROUP BY `donasi`.`id_donasi` limit $offset,$limit");
-
 		return $hsl;
+	}
+
+	public function Getpublik()
+	{
+		$this->db->order_by('id_berita', 'desc');
+		$this->db->order_by('tgl_berita', 'desc');
+		$this->db->join('kategori', 'berita.id_kategori=kategori.id_kategori');
+		$this->db->where('st_berita', 'Publik');
+		$this->db->limit('3');
+		return $this->db->get('berita');
 	}
 
 }

@@ -96,45 +96,51 @@
                     <ul class="metismenu" id="menu1">
                       <p></p>
                       <p></p>
-                        <li class="active">
+                        <li>
                             <a title="Landing Page" href="<?php echo site_url('beranda_admin') ?>" aria-expanded="false">
-                              <span class="educate-icon educate-home icon-wrap" aria-hidden="true"></span>
+                              <span class="fa fa-home icon-wrap" aria-hidden="true"></span>
                               <span class="mini-click-non">Beranda</span>
                             </a>
                         </li>
                         <li>
-                            <a title="Admin" href="<?php echo site_url('admin') ?>" aria-expanded="false">
-                              <span class="educate-icon educate-professor icon-wrap" aria-hidden="true"></span>
-                              <span class="mini-click-non">Admin</span>
-                            </a>
+                            <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="fa fa-newspaper-o icon-wrap"></span> <span class="mini-click-non">Berita</span></a>
+                            <ul class="submenu-angle collapse" aria-expanded="false">
+                                <li><a title="Tambah Berita" href="<?php echo site_url('berita/create') ?>"><span class="mini-sub-pro">Tambah Berita</span></a></li>
+                                <li><a title="Berita" href="<?php echo site_url('berita') ?>"><span class="mini-sub-pro">Berita</span></a></li>
+                                <li><a title="Kategori" href="<?php echo site_url('kategori') ?>"><span class="mini-sub-pro">Kategori</span></a></li>
+                            </ul>
                         </li>
                         <li>
                             <a title="Donatur" href="<?php echo site_url('donatur') ?>" aria-expanded="false">
-                              <span class="educate-icon educate-professor icon-wrap" aria-hidden="true"></span>
-                              <span class="mini-click-non">Donatur</span>
+                              <span class="fa fa-users icon-wrap" aria-hidden="true"></span>
+                              <span class="mini-click-non">Manage Donatur</span>
                             </a>
                         </li>
                         <li>
                             <a class="has-arrow" href="#">
-            								   <span class="educate-icon educate-event icon-wrap sub-icon-mg"></span>
+            								   <span class="fa fa-reorder icon-wrap sub-icon-mg"></span>
             								   <span class="mini-click-non">Manage Program</span>
 								            </a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Dashboard v.1" href="<?php echo site_url('donasi') ?>"><span class="mini-sub-pro">Donasi</span></a></li>
-                                <li><a title="Dashboard v.2" href="<?php echo site_url('berita') ?>"><span class="mini-sub-pro">Berita</span></a></li>
-                                <li><a title="Dashboard v.3" href="<?php echo site_url('kategori') ?>"><span class="mini-sub-pro">Kategori</span></a></li>
+                              <li><a title="Tambah Donasi" href="<?php echo site_url('donasi/create') ?>"><span class="mini-sub-pro">Tambah Donasi</span></a></li>
+                                <li><a title="Donasi" href="<?php echo site_url('donasi') ?>"><span class="mini-sub-pro">Donasi</span></a></li>
                             </ul>
                         </li>
-
                         <li>
                             <a class="has-arrow" href="#" aria-expanded="false">
-                              <span class="educate-icon educate-event icon-wrap sub-icon-mg" ></span>
+                              <span class="fa fa-print icon-wrap sub-icon-mg" ></span>
                               <span class="mini-click-non">Laporan</span>
                             </a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="All Professors" href="<?php echo site_url('transaksi') ?>"><span class="mini-sub-pro">Transaksi</span></a></li>
                                 <li><a title="Add Professor" href="<?php echo site_url('transaksi/rekap') ?>"><span class="mini-sub-pro">Rekap Donasi</span></a></li>
                             </ul>
+                        </li>
+                        <li>
+                            <a title="Admin" href="<?php echo site_url('admin') ?>" aria-expanded="false">
+                              <span class="fa fa-user icon-wrap" aria-hidden="true"></span>
+                              <span class="mini-click-non">Manage Admin</span>
+                            </a>
                         </li>
                     </ul>
                 </nav>

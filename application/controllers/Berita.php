@@ -23,7 +23,7 @@ class Berita extends CI_Controller
 			$q = $this->M_berita->GetAll();
 		}
 		$data = array(
-			'judul'	=> "DATA berita",
+			'judul'	=> "DATA Berita",
 			'sub'	=> "Lihat berita",
 			'data' => $q
 		);
@@ -36,7 +36,7 @@ class Berita extends CI_Controller
 	{
 		$this->load->model('M_kategori');
 		$data = array(
-			'judul'	=> "DATA berita",
+			'judul'	=> "DATA Berita",
 			'sub'	=> "Tambah berita",
 			'row' 	=> $this->M_kategori->GetAll(),
 			'data' => ''
@@ -80,7 +80,7 @@ class Berita extends CI_Controller
 		$this->load->model('M_kategori');
 		$kd   = $this->uri->segment(3);
 		$data = array(
-			'judul'	=> "DATA berita",
+			'judul'	=> "DATA Berita",
 			'sub'	=> "Ubah berita",
 			'row' 	=> $this->M_kategori->GetAll(),
 			'data' 	=> $this->M_berita->edit($kd)

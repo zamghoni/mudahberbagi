@@ -3,6 +3,7 @@
     <div class="widget-box">
       <div class="widget-header">
         <h4 class="widget-title"><?php echo $sub; ?></h4>
+        <hr>
       </div>
       <div class="widget-body">
         <div class="widget-main no-padding">
@@ -19,7 +20,7 @@
               <label>Jam</label><br>
               <input type="time" name="jam_berita" class="form-control" value="<?php echo $data['jam_berita'] ?>" required oninvalid="this.setCustomValidity('Judul Berita Harus Di Isi')" oninput="setCustomValidity('')"><p></p>
 
-              <label>kategori</label><br>
+              <label>Kategori</label><br>
               <select name="id_kategori" class="form-control" required>
                 <option value="<?php echo $data['id_kategori'] ?>"><?php echo $data['nama_kategori'] ?></option>
                 <?php
@@ -28,12 +29,13 @@
                   <option value="<?php echo $r['id_kategori'] ?>"><?php echo $r['nama_kategori']; ?></option>
                 <?php } ?>
               </select><p></p>
-
+              <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
               <label>Isi Berita</label><br>
               <textarea name="isi_berita" class="form-control ckeditor" id="ckeditor" placeholder="isi Berita" required><?php echo $data['isi_berita'] ?></textarea>
+              <script>CKEDITOR.replace( 'isi_berita' );</script>
               <p></p>
 
-              <img src="<?php echo base_url('assets/img_berita/'.$data['img_berita']) ?>" width="400" height="300"><br>
+              <img src="<?php echo base_url('assets/img_berita/'.$data['img_berita']) ?>" width="400" height="300"><br><p></p>
               <label>Ganti Foto</label><br>
               <input type="file" name="img_berita" class="form-control"><p></p>
 
