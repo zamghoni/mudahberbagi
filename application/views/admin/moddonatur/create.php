@@ -18,7 +18,7 @@
               <input type="text" name="nama_donatur" class="form-control" placeholder="Masukan Nama Donatur" value="" required oninvalid="this.setCustomValidity('Nama Donatur Harus Di Isi')" oninput="setCustomValidity('')"><p></p>
 
               <label>Password Donatur</label><br>
-              <input type="text" name="pswd_donatur" class="form-control" placeholder="Masukan Password Donatur" value="" required oninvalid="this.setCustomValidity('Password Donatur Harus Di Isi')" oninput="setCustomValidity('')"><p></p>
+              <input type="password" name="pswd_donatur" class="form-control" placeholder="Masukan Password Donatur" value="" required oninvalid="this.setCustomValidity('Password Donatur Harus Di Isi')" oninput="setCustomValidity('')"><p></p>
 
               <label>No HP Donatur</label><br>
               <input type="number" name="hp_donatur" class="form-control" placeholder="Masukan No HP Donatur" value="" required oninvalid="this.setCustomValidity('No HP Donatur Harus Di Isi')" oninput="setCustomValidity('')"><p></p>

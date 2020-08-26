@@ -44,7 +44,7 @@ class Donatur extends CI_Controller {
 		$data = array(
       'kode_donatur'=> $this->input->post('kode_donatur'),
 			'nama_donatur'=> $this->input->post('nama_donatur'),
-      'pswd_donatur'=> $this->input->post('pswd_donatur'),
+      'pswd_donatur'=> md5($this->input->post('pswd_donatur')),
       'hp_donatur'=> $this->input->post('hp_donatur'),
       'email_donatur'=> $this->input->post('email_donatur'),
       'img_donatur'=> $this->input->post('img_donatur')
@@ -70,11 +70,14 @@ class Donatur extends CI_Controller {
 		$data = array(
       'kode_donatur'=> $this->input->post('kode_donatur'),
 			'nama_donatur'=> $this->input->post('nama_donatur'),
-      'pswd_donatur'=> $this->input->post('pswd_donatur'),
       'hp_donatur'=> $this->input->post('hp_donatur'),
       'email_donatur'=> $this->input->post('email_donatur'),
-      'img_donatur'=> $this->input->post('img_donatur')
 			);
+			if ($this->input->post('pswd_donatur') != null) {
+				$data['pswd_donatur'] = md5($this->input->post('pswd_donatur'));
+			} else if ($this->input->post('img_donatur') != null) {
+				$data['img_donatur'] = $this->input->post('img_donatur');
+			}
 		$this->M_donatur->update($kd,$data);
 		redirect($this->redirect,'refresh');
 	}

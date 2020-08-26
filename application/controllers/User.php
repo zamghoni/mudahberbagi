@@ -20,12 +20,6 @@ class User extends CI_Controller
 
 	public function index()
 	{
-		/*	if ($this->input->get('search')) {
-			$q = $this->M_beranda->search($this->input->get('search'));
-		}else{
-			$q = $this->M_beranda->donasiberanda();
-		}*/
-
 		redirect('user/profile');
 	}
 

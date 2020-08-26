@@ -88,7 +88,7 @@
         <nav id="sidebar" class="">
             <div class="sidebar-header">
                 <p></p>
-                <a href="<?php echo site_url('beranda') ?>" target="_blank"><img class="main-logo" src="<?php echo base_url(); ?>/assets/backend/images/icon/icon.png" alt="" /></a>
+                <a href="<?php echo site_url('beranda') ?>" target="_blank"><img class="main-logo" src="<?php echo base_url(); ?>assets/backend/images/icon/icon.png" alt="" /></a>
                 <strong><a href="<?php echo site_url('beranda') ?>"><img src="<?php echo base_url(); ?>/assets/backend/img/logo/logosn.png" alt="" /></a></strong>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
@@ -125,6 +125,12 @@
                               <li><a title="Tambah Donasi" href="<?php echo site_url('donasi/create') ?>"><span class="mini-sub-pro">Tambah Donasi</span></a></li>
                                 <li><a title="Donasi" href="<?php echo site_url('donasi') ?>"><span class="mini-sub-pro">Donasi</span></a></li>
                             </ul>
+                        </li>
+                        <li>
+                            <a title="Donatur" href="<?php echo site_url('donatur') ?>" aria-expanded="false">
+                              <span class="fa fa-money icon-wrap" aria-hidden="true"></span>
+                              <span class="mini-click-non">Alokasi Dana</span>
+                            </a>
                         </li>
                         <li>
                             <a class="has-arrow" href="#" aria-expanded="false">
