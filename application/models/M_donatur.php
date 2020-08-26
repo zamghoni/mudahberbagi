@@ -6,9 +6,12 @@ class M_donatur extends CI_Model
 	private $table 	= 'donatur';
 	private $pk 	= 'kode_donatur';
 
-	public function GetAll()
+	public function GetAll($id=null)
 	{
 		$this->db->order_by($this->pk, 'desc');
+		if ($id != null) {
+			$this->db->where('kode_donatur', $id);
+		}
 		return $this->db->get($this->table);
 	}
 

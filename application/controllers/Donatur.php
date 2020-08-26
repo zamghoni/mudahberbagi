@@ -40,17 +40,31 @@ class Donatur extends CI_Controller {
 		$this->load->view($this->template.'footer', $data);
 	}
 
-	public function save(){
-		$data = array(
-      'kode_donatur'=> $this->input->post('kode_donatur'),
-			'nama_donatur'=> $this->input->post('nama_donatur'),
-      'pswd_donatur'=> md5($this->input->post('pswd_donatur')),
-      'hp_donatur'=> $this->input->post('hp_donatur'),
-      'email_donatur'=> $this->input->post('email_donatur'),
-      'img_donatur'=> $this->input->post('img_donatur')
-			);
-		$this->M_donatur->save($data);
-		redirect($this->redirect,'refresh');
+	public function save()
+	{
+		//img_donatur
+		$name_img_donatur = $_FILES['img_donatur']['name'];
+		$type_img_donatur = $_FILES['img_donatur']['type'];
+		$tmp_img_donatur  = $_FILES['img_donatur']['tmp_name'];
+		//upload img
+		if (!empty($tmp_img_donatur)) {
+			if ($type_img_donatur != "image/jpeg" and $type_img_donatur != "image/jpg" and $type_img_donatur != "image/png") {
+				echo "<script>alert('format gambar jpeg|jpg|png');</script>";
+				redirect($this->redirect, 'refresh');
+			} else {
+				$img_donatur = UploadImg($_FILES['img_donatur'], './assets/img_donatur/', 'Donatur', 800);
+				$data = array(
+					'kode_donatur'=> $this->input->post('kode_donatur'),
+					'nama_donatur'=> $this->input->post('nama_donatur'),
+		      'pswd_donatur'=> md5($this->input->post('pswd_donatur')),
+		      'hp_donatur'=> $this->input->post('hp_donatur'),
+		      'email_donatur'=> $this->input->post('email_donatur'),
+					'img_donatur' => 	$img_donatur
+				);
+				$this->M_donatur->save($data);
+				redirect($this->redirect, 'refresh');
+			}
+		}
 	}
 
 	public function edit(){
@@ -65,25 +79,51 @@ class Donatur extends CI_Controller {
 		$this->load->view($this->template.'footer', $data);
 	}
 
-	public function update(){
+	public function update()
+	{
 		$kd = $this->uri->segment(3);
-		$data = array(
-      'kode_donatur'=> $this->input->post('kode_donatur'),
-			'nama_donatur'=> $this->input->post('nama_donatur'),
-      'hp_donatur'=> $this->input->post('hp_donatur'),
-      'email_donatur'=> $this->input->post('email_donatur'),
-			);
-			if ($this->input->post('pswd_donatur') != null) {
-				$data['pswd_donatur'] = md5($this->input->post('pswd_donatur'));
-			} else if ($this->input->post('img_donatur') != null) {
-				$data['img_donatur'] = $this->input->post('img_donatur');
+		//img_donatur
+		$name_img_donatur = $_FILES['img_donatur']['name'];
+		$type_img_donatur = $_FILES['img_donatur']['type'];
+		$tmp_img_donatur  = $_FILES['img_donatur']['tmp_name'];
+		//upload img
+		if (!empty($tmp_img_donatur)) {
+			if ($type_img_donatur != "image/jpeg" and $type_img_donatur != "image/jpg") {
+				echo "<script>alert('format gambar jpeg|jpg|png');</script>";
+				redirect($this->redirect, 'refresh');
+			} else {
+				$img_donatur = UploadImg($_FILES['img_donatur'], './assets/img_donatur/', 'Donatur', 800);
+				$data = array(
+					'kode_donatur'=> $this->input->post('kode_donatur'),
+					'nama_donatur'=> $this->input->post('nama_donatur'),
+		      'hp_donatur'=> $this->input->post('hp_donatur'),
+		      'email_donatur'=> $this->input->post('email_donatur'),
+					'img_donatur' => 	$img_donatur
+				);
+				unlink("./assets/img_donatur/".$this->input->post('old_img_donatur'));
 			}
-		$this->M_donatur->update($kd,$data);
-		redirect($this->redirect,'refresh');
+		} else {
+			$data = array(
+				'kode_donatur'=> $this->input->post('kode_donatur'),
+				'nama_donatur'=> $this->input->post('nama_donatur'),
+				'hp_donatur'=> $this->input->post('hp_donatur'),
+				'email_donatur'=> $this->input->post('email_donatur'),
+			);
+		}
+		if ($this->input->post('pswd_donatur') != null) {
+			$data['pswd_donatur'] = md5($this->input->post('pswd_donatur'));
+		}
+		$this->M_donatur->update($kd, $data);
+		redirect($this->redirect, 'refresh');
 	}
+
 
 	public function delete(){
 		$kode_donatur = $this->uri->segment(3);
+		$param = $this->M_donatur->GetAll($kode_donatur)->row();
+		if ($param->img_donatur != null) {
+			unlink("./assets/img_donatur/".$param->img_donatur);
+		}
 		$data = array('kode_donatur' => $kode_donatur);
 		$this->M_donatur->delete($data);
 		redirect($this->redirect,'refresh');

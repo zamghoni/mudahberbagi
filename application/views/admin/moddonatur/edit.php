@@ -8,7 +8,7 @@
       <div class="widget-body">
         <div class="widget-main no-padding">
           <!--Form-->
-          <form method="post" action="<?php echo site_url('donatur/update/'.$data['kode_donatur']) ?>">
+          <form method="post" action="<?php echo site_url('donatur/update/'.$data['kode_donatur']) ?>" enctype="multipart/form-data">
             <fieldset>
 
               <label>Kode Donatur</label><br>
@@ -29,6 +29,7 @@
               <img src="<?php echo base_url('assets/img_donatur/'.$data['img_donatur']) ?>" width="400" height="300"><br><p></p>
               <label>Ganti Foto</label><br>
               <input type="file" name="img_donatur" class="form-control"><p></p>
+              <input type="hidden" name="old_img_donatur" value="<?=$data['img_donatur']?>">
 
               <div class="form-actions text-center">
                 <a href="<?php echo site_url('donatur') ?>"><button class="btn btn-danger" type="button"><i class="ace-icon fa fa-undo bigger-110"></i> Batal</button></a>

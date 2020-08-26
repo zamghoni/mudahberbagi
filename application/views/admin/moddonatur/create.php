@@ -8,7 +8,7 @@
       <div class="widget-body">
         <div class="widget-main no-padding">
           <!--Form-->
-          <form method="post" action="<?php echo site_url('donatur/save') ?>">
+          <form method="post" action="<?php echo site_url('donatur/save') ?>" enctype="multipart/form-data">
             <fieldset>
 
               <label>Kode Donatur</label><br>
