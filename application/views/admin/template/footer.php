@@ -66,6 +66,19 @@
         });
   </script>
 <?php endif; ?>
+
+<?php if ($this->session->has_userdata('error')): ?>
+  <script type="text/javascript">
+  addEventListener('load',function myfunction(){
+    Lobibox.notify('error', {
+        position: 'top right',
+        showClass: 'rollIn',
+        hideClass: 'rollOut',
+        msg: '<?=$this->session->flashdata('error');?>'
+    });
+        });
+  </script>
+<?php endif; ?>
 <!-- morrisjs JS
 ============================================ -->
 <script src="<?php echo base_url(); ?>/assets/backend/js/morrisjs/raphael-min.js"></script>

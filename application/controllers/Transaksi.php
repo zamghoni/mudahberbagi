@@ -36,7 +36,7 @@ class Transaksi extends CI_Controller
 	public function rekap()
 	{
 
-		$bulan = '12';
+		$bulan = date('m');
 
 		if ($this->input->get('bulan')) {
 			$bulan = $this->input->get('bulan');
@@ -45,7 +45,7 @@ class Transaksi extends CI_Controller
 			$bulan = $bulan;
 		}
 
-		$tahun = '2019';
+		$tahun = date('Y');
 		if ($this->input->get('tahun')) {
 			$tahun = $this->input->get('tahun');
 			$this->session->set_userdata('tahun', $tahun);

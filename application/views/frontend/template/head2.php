@@ -115,7 +115,7 @@
             </div>
             <div class="recent-cause-funding">
               <div class="fund-line">
-                <div class="fill" ><?php
+                <div class="fill <?php
                 if ($row->total == null) {
                   echo '0%;';
                 } else {

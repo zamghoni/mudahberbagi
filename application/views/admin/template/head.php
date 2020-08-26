@@ -131,7 +131,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a title="Donatur" href="<?php echo site_url('donatur') ?>" aria-expanded="false">
+                            <a title="Donatur" href="<?php echo site_url('alokasi') ?>" aria-expanded="false">
                               <span class="fa fa-money icon-wrap" aria-hidden="true"></span>
                               <span class="mini-click-non">Alokasi Dana</span>
                             </a>

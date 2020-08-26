@@ -64,6 +64,9 @@
 									</div>
 									<div class="col-md-3">
 										<select name="tahun" id="per_page" class="form-control">
+											<option value="ALL" <?php if ($tahun == 'ALL') {
+												echo 'selected';
+											} ?>>Semua Tahun</option>
 											<option value="2019" <?php if ($tahun == '2019') {
 												echo 'selected';
 											} ?>>2019</option>
