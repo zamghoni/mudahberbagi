@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2020 at 10:42 AM
--- Server version: 10.4.13-MariaDB
+-- Generation Time: Aug 27, 2020 at 09:58 AM
+-- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -41,9 +41,33 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`kd_admin`, `nama_admin`, `pswd_admin`, `hp_admin`, `email_admin`, `img_admin`) VALUES
-('Nely', 'Nely Lusiana', '2025927648fb48b37687517586f228ff', '085229654099', 'nelylusiana@gmail.com', '20190529115653_admin.jpg'),
-('TWS', 'Tri wulan sisollandari', '202cb962ac59075b964b07152d234b70', '08988768865', '321triwulan@gmail.com', '0000_00_00.jpg'),
-('WDY', 'Widya Anisa', '9146bfc09df862ee46fa9b512c72f9a6', '085956293655', 'wa054592@gmail.com', '0000_00_00.jpg');
+('aji', 'aji sop', '202cb962ac59075b964b07152d234b70', '08979156600', 'aji@gmail.com', '0000_00_00.jpg'),
+('Nely', 'Nely Lusiana', '2025927648fb48b37687517586f228ff', '085229654099', 'nelylusiana@gmail.com', '20190529115653_admin.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `alokasi`
+--
+
+CREATE TABLE `alokasi` (
+  `id_alokasi` int(5) NOT NULL,
+  `id_donasi` int(10) NOT NULL,
+  `kd_admin` varchar(10) NOT NULL,
+  `nama_penerima` varchar(100) NOT NULL,
+  `total_alokasi` int(12) NOT NULL,
+  `alamat_penerima` text NOT NULL,
+  `ket_alokasi` text NOT NULL,
+  `dokumentasi` varchar(100) NOT NULL,
+  `dibuat_pada` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `alokasi`
+--
+
+INSERT INTO `alokasi` (`id_alokasi`, `id_donasi`, `kd_admin`, `nama_penerima`, `total_alokasi`, `alamat_penerima`, `ket_alokasi`, `dokumentasi`, `dibuat_pada`) VALUES
+(1, 27, 'Nely', 'agus maulana', 5000000, '<p>jalan kates raya</p>\r\n', '<p>Dana Rehab Mushola</p>\r\n', 'Foto_Dokumentasi200826-a8954446bf.jpg', '2020-08-26');
 
 -- --------------------------------------------------------
 
@@ -68,8 +92,11 @@ CREATE TABLE `berita` (
 --
 
 INSERT INTO `berita` (`id_berita`, `kd_admin`, `id_kategori`, `st_berita`, `tgl_berita`, `jam_berita`, `judul_berita`, `isi_berita`, `img_berita`) VALUES
-(3, 'Nely', 8, 'Publik', '2020-08-09', '12:17:04', 'LAPORAN PELAKSANAAN TEBAR HEWAN QURBAN TAHUN 1441 H BAITUL MAAL BMT BUM', '<p>Alhamdulillah telah tersalurkan amanah berupa:</p>\r\n<p>71 ???? Qurban Kambing</p>\r\n<p>(69 qurban distribusi Tegal dan sekitarnya. 2 qurban distribusi mualaf tepian negeri Alor NTT)</p>\r\n\r\n<br>Qurban di bagi dalam bentuk paket daging sebanyak:</br>\r\n<p>1.295 ???? Paket Qurban</p>\r\n\r\n<br>*Daerah Penyaluran ????</br>\r\n<p>Kabupaten Tegal, kab Brebes, Kota Tegal dan Alor NTT.</p>\r\n\r\n<br>*Segmen Penerima Manfaat ????</br>\r\n<p>- Daerah Ekonomi Lemah</p>\r\n<p>- Wilayah minim qurban</p>\r\n<p>- Keluarga Anak Yatim</p>\r\n<p>- Keluarga Pasien Kanker Dampingan Baitul Maal BMT BUM</p>\r\n<p>- Komunitas Difabel Tegal dll</p>\r\n\r\n<br>Jazakumullahu Khairan Jaza kepada para donatur, relawan dan masyarakat yang telah membantu pelaksanaan Tebar Hewan Qurban ini semoga Allah menerima Qurban kita dan mengganti dengan rezeki yang makin berlipat dan berkah.</br>\r\n\r\n<br>_*Qurban Bikin Happy*_</br>\r\n\r\n<br>Jabat Erat</br>\r\n<p>Baitul Maal BMT BUM</p>\r\n\r\n<br>FB : Baitulmaalbum</br>\r\n<p>IG : Baitulmaal_BUM</p>\r\n<p>YT : BUM TV</p>\r\n\r\n<br>Cp : 085.878.888.789</br>', '20200809121703_berita.jpg'),
-(4, 'Nely', 10, 'Blokir', '2020-08-11', '15:37:19', 'Aksi FOZ Jateng', 'Baitul Maal BMT BUM sebagai anggota Forum Zakat (FOZ) bersinergi mengatasi berbagai masalah karena dampak pandemi.\r\n\r\n<br>Alhamdulillah untuk atasi dampak pandemi, Forum Zakat Jateng Bagikan 102.773 Paket Sembako</br>\r\n\r\n<br>Semenjak pandemi covid-19 melanda Indonesia awal 2020 lalu, banyak masyarakat Jawa Tengah terkena dampaknya. Ribuan karyawan terkena PHK, guru honorer & guru ngaji yang tidak mendapat gaji, pedagang kaki lima yang tidak bisa berdagang, tukang ojek dan sopir angkot yang sepi pelanggan, sampai para penyandang difabel yang kehilangan penghasilan.</br>\r\n\r\n<br>Melihat fenomena itu, Organisasi Pengelola Zakat (OPZ) yang tergabung dalam Forum Zakat Jawa Tengah termasuk didalamnya Baitul Maal BMT BUM bergotong royong dan bersinergi untuk membantu warga yang terdampak covid 19.</br>\r\n\r\n<br>\"Banyak aksi yang sudah dilakukan diantaranya adalah penyemprotan desinfektan pada fasilitas publik, bantuan APD untuk tenaga medis, edukasi kepada masyarakat terkait perilaku hidup bersih dan sehat hingga pemberian paket sembako. \" Ungkap Djoko Adhi, selaku ketua Forum Zakat Jawa Tengah.</br>\r\n\r\n<br>Selengkapnya bisa di baca</br>\r\n<p>https://forumzakat.org/atasi-dampak-pandemi-forum-zakat-jateng-bagikan-102-773-paket-sembako/</p>', '20200811153718_berita.jpg');
+(1, 'Nely', 7, 'Publik', '2019-06-18', '20:14:41', 'Kambing Untuk Dunia Islam', '\r\nBerbagai negara dengan penduduk Muslim mengalami kesulitan yang sangat extreem. Palestina dengan penjajahan sampai sekarang yang tak kunjung usai, tragedi kemanusiaan di Rohingya yang mengakibatkan ratusan ribu mengungsi, kekeringan bertahun tahun yang dialami Somalia, berbagai bencana dan konflik yang mengakibatkan jutaan manusia mengalami kesusahan dan kehidupan yang serba sulit membutuhkan uluran tangan dari saudara saudara muslim dimanapun berada.\r\n\r\nTahun ini mari sisihkan Qurban kita untuk membantu meringankan penderitaan saudara kita di berbagai belahan dunia melalui Baitul Maal BUM dan ACT…\r\n\r\nMengapa ber-Qurban melalui Baitul Maal BMT BUM (?)\r\n\r\nMudah dan Murah\r\nSudah termasuk biaya operasional\r\nDistribusi Sesuai Akad\r\nMendapatkan laporan pelaksanaan Qurban\r\n\r\nTertarik donasi (?)\r\n\r\nHARGA QURBAN\r\n\r\nSomalia, Rohingya\r\nRp 2.000.000/ ekor\r\n\r\nPalestina, Syria\r\nRp 4.750.000/ ekor\r\n\r\nKemudahan bayar\r\nBTN SY : 741 300 1290\r\nBSM : 711 2222 116\r\nBNI Sy: 0331725862\r\n\r\nKonfirmasi & Informasi : \r\n081 328 365 144\r\n085 726 573 510\r\n', 'Qurban-BUM-web-SP.jpg'),
+(2, 'Nely', 8, 'Publik', '2019-06-18', '20:18:23', 'Qurban itu Mudah dan Murah', 'Mengapa ber-Qurban melalui Baitul Maal BMT BUM (?)\r\n\r\nMudah dan Murah\r\nSudah termasuk biaya operasional\r\nDistribusi hingga pelosok Desa & Miskin\r\nMendapatkan laporan pelaksanaan Qurban\r\n\r\nTertarik donasi (?)\r\n\r\nHARGA QURBAN\r\n\r\nDomba Jantan (21-25 kg)\r\nRp 1.590.000/ ekor\r\n\r\nDomba Premium (30-35 kg)\r\nRp 2.590.000/ ekor\r\n\r\n \r\n\r\nKemudahan bayar\r\nBTN SY : 741 300 1290\r\nBSM : 711 2222 116\r\nBNI Sy: 0331725862\r\n\r\nKonfirmasi & Informasi : \r\n081 328 365 144\r\n085 726 573 510\r\n', '20191203134633_berita.jpg'),
+(3, 'Nely', 10, 'Publik', '2020-08-13', '21:07:53', 'berita 1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '20200826004700_berita.jpg'),
+(6, 'Nely', 7, 'Publik', '2020-08-13', '21:20:32', 'Sering Sakit Kepala? Redakan dengan 5 Buah \'Sakti\' Inia', '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\r\n', '20200826101906_berita.jpeg'),
+(9, 'Nely', 8, 'Publik', '2020-08-26', '10:38:42', 'Sering kejang-kejang', '<p>sedekah</p>\r\n', '20200826103903_berita.jpg');
 
 -- --------------------------------------------------------
 
@@ -87,7 +114,7 @@ CREATE TABLE `donasi` (
   `judul_donasi` varchar(100) NOT NULL,
   `isi_donasi` text NOT NULL,
   `img_donasi` varchar(100) NOT NULL,
-  `target_donasi` varchar(12) NOT NULL
+  `target_donasi` int(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -95,9 +122,11 @@ CREATE TABLE `donasi` (
 --
 
 INSERT INTO `donasi` (`id_donasi`, `kd_admin`, `id_kategori`, `st_donasi`, `tgl_donasi`, `jam_donasi`, `judul_donasi`, `isi_donasi`, `img_donasi`, `target_donasi`) VALUES
-(24, 'Nely', 10, 'Publik', '2019-05-28', '19:17:13', 'Rumah Pemberdayaan', '<p><!--StartFragment-->Rumah Pemberdayaan berfokus pada pembentukan unit-unit ekonomi produktif yang dilakukan melalui KUBE (Kelompok Usaha Bersama) dan PERMATA (Pengusaha Berdaya Mandiri Tangguh) berupa pembuatan usaha dengan basis individu. Program ini dikuatkan dengan berbagai pelatihan gratis melalui Rumah Mandiri. Diantaranya: Pelatihan menjahit, kursus elektronik dasar, membuat Handmade, membuat aneka Snack dan kue, Training manajemen keuangan Bisnis dan lain lain.<!--EndFragment--></p>\r\n', '20200811152810_donasi.jpg', '15000000'),
-(27, 'Nely', 10, 'Publik', '2019-05-28', '19:20:18', 'Rumah Dakwah', '<p><!--StartFragment-->Syiar keummatan dan dakwah menjadi salah satu program penting didalam Baitul Maal BMT BUM. Ada banyak kegiatan yang terangkum didalam program ini diantaranya adalah pembuatan MKU (Membangun Keluarga Utama) sebuah majelis taklim yang berbasis pemberdayaan ekonomi, Tebar Hewan Kurban khususnya di daerah yang belum ada qurban, Pelatihan Pulasara Jenazah khususnya untk ibu-ibu, Pawai Sambut Ramadhan, dan seminar-seminar agama.<!--EndFragment--></p>\r\n', '20190528192018_donasi.jpg', '16000000'),
-(35, 'Nely', 9, 'Publik', '2020-08-11', '15:26:35', 'Wakaf Quran', 'Mungkin saat ini kita dengan mudah membeli Qur\'an yang Baru dan Bagus Kualitasnya untuk belajar membaca dan menghafalnya di Rumah.\r\n\r\n<br>Tapi, masih banyak saudara disekitar kita atau dipelosok daerah, yang tidak mampu membeli Qur\'an yang Baru dan Bagus Kualitasnya. Kalaupun ada kondisinya sudah lama dan usang. Sehingga untuk belajar dan menghafal mereka harus bergantian.</br>\r\n\r\n<br>Dengan berdonasi Wakaf Qur\'an Rp. 100.000. Anda bersinergi bersama Baitul Maal BMT BUM. Berbagi dan Menyalurkan Sejuta Qur\'an yang Baru dan Bagus Kualitasnya. Agar semakin banyak Masyarakat disekitar kita dan di pelosok daerah, yang bisa membaca dan menghafal Qur\'an.</br>\r\n\r\n<br>Bayangkan...</br>\r\n<p>Wakaf Qur\'an Anda</p>\r\n<p>Dibaca setiap hari..</p>\r\n<p>Dihafalkan dan diamalkan...</p>\r\n<p>Betapa banyak pahala mengalir..</p>\r\n<p>Dari setiap ayatnya...</p>\r\n<p>Bahkan setiap satu hurufnya..</p>\r\n\r\n<br>Info, Konfirmasi dan layanan jemput donasi wakaf :</br>\r\n<p>wa.me/6285878888789</p>', '20200811152634_donasi.jpg', '10000000');
+(23, 'admin', 2, 'Blokir', '2019-05-15', '19:24:57', 'coba judul doang', '<p>tes isi ny</p>\r\n', '20190515192456_berita.jpg', 0),
+(24, 'Nely', 10, 'Publik', '2019-05-28', '19:17:13', 'Rumah Pemberdayaan', '<p><!--StartFragment-->Rumah Pemberdayaan berfokus pada pembentukan unit-unit ekonomi produktif yang dilakukan melalui KUBE (Kelompok Usaha Bersama) dan PERMATA (Pengusaha Berdaya Mandiri Tangguh) berupa pembuatan usaha dengan basis individu. Program ini dikuatkan dengan berbagai pelatihan gratis melalui Rumah Mandiri. Diantaranya: Pelatihan menjahit, kursus elektronik dasar, membuat Handmade, membuat aneka Snack dan kue, Training manajemen keuangan Bisnis dan lain lain.<!--EndFragment--></p>\r\n', '20200826061832_donasi.jpg', 15000000),
+(25, 'Nely', 10, 'Publik', '2019-05-28', '19:18:34', 'Rumah Pintar', '<p><!--StartFragment-->Rumah Pintar berorientasi kepada peningkatan kualitas pendidikan anak secara integral. Artinya Baitul Maal BUM tidak hanya sekedar memberikan biaya sekolah, tetapi terintegrasi dengan program lain seperti bimbingan belajar, pendampingan spiritual, training motivasi untuk membangun karakter anak, dan outbond training untuk memperkuat kemandirian serta kerjasama (hubungan sosial).<!--EndFragment--></p>\r\n', '20190528191834_donasi.jpg', 10000000),
+(26, 'Nely', 10, 'Publik', '2019-05-28', '19:19:18', 'Rumah Sehat', '<p><!--StartFragment-->Rumah Sehat berupaya memberikan pelayanan kesehatan terjangkau untuk masyarakat. Diantara program yang telah berjalan adalah Ambulan gratis yang telah membantu berbagai kebutuhan masyarakat. Selain ambulan gratis program Baitul Maal terkait kesehatan adalah cek kesehatan gratis. seperti asam urat, gula darah dan kolesterol kepada masyarakat disertai dengan penyuluhan berbagai permasalahan kesehatan.<!--EndFragment--></p>\r\n', '20200102142529_donasi.jpg', 12000000),
+(27, 'Nely', 10, 'Publik', '2019-05-28', '19:20:18', 'Rumah Dakwah', '<p><!--StartFragment-->Syiar keummatan dan dakwah menjadi salah satu program penting didalam Baitul Maal BMT BUM. Ada banyak kegiatan yang terangkum didalam program ini diantaranya adalah pembuatan MKU (Membangun Keluarga Utama) sebuah majelis taklim yang berbasis pemberdayaan ekonomi, Tebar Hewan Kurban khususnya di daerah yang belum ada qurban, Pelatihan Pulasara Jenazah khususnya untk ibu-ibu, Pawai Sambut Ramadhan, dan seminar-seminar agama.<!--EndFragment--></p>\r\n', '20190528192018_donasi.jpg', 16000000);
 
 -- --------------------------------------------------------
 
@@ -119,7 +148,9 @@ CREATE TABLE `donatur` (
 --
 
 INSERT INTO `donatur` (`kode_donatur`, `nama_donatur`, `pswd_donatur`, `hp_donatur`, `email_donatur`, `img_donatur`) VALUES
-(11, 'Nely', '202cb962ac59075b964b07152d234b70', '082319287391', 'nely@gmail.com', '3.jpg');
+(1, 'Muhamad Syahrul Mubarok', '25d55ad283aa400af464c76d713c07ad', '082328924622', 'muhamadsyahrulmubarok@gmail.com', 'Logo_MI.jpg'),
+(11, 'Nely', '202cb962ac59075b964b07152d234b70', '082319287391', 'nely@gmail.com', '20200826111707_Donatur.jpg'),
+(1234, 'aldi', '5cf15fc7e77e85f5d525727358c0ffc9', '0897956689', 'aldi@gmail.com', '');
 
 -- --------------------------------------------------------
 
@@ -165,7 +196,15 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `id_donasi`, `kode_donatur`, `id_bank`, `nominal`, `tgl_transaksi`, `dukungan`, `bukti_pembayaran`, `status_pembayaran`) VALUES
-(41, 25, '11', '1', 120000, '2020-08-13', 'coba\r\n', '0', '3');
+(19, 26, '11', '4', 54000, '2019-12-11', 'ajdsh', '19.jpg', '1'),
+(22, 26, '11', '0', 250000, '2019-11-06', '', '20200827-22.jpg', '1'),
+(25, 27, '11', '1', 100000, '2020-07-15', 'oke', '20200827-25.jpg', '1'),
+(26, 24, '11', '1', 1500000, '2020-08-23', '', '20200827-26.jpg', '1'),
+(27, 25, '11', '3', 8500000, '2020-08-27', '', '20200827-27.jpeg', '1'),
+(28, 24, '11', '4', 5000000, '2020-08-27', 'asasas', '20200827-28.jpeg', '1'),
+(29, 26, '11', '1', 0, '2020-08-27', 'asas', '0', '0'),
+(30, 25, '11', '1', 0, '2020-08-27', '', '0', '0'),
+(31, 25, '11', '1', 50000, '2020-08-27', '', '0', '0');
 
 --
 -- Indexes for dumped tables
@@ -176,6 +215,12 @@ INSERT INTO `transaksi` (`id_transaksi`, `id_donasi`, `kode_donatur`, `id_bank`,
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`kd_admin`);
+
+--
+-- Indexes for table `alokasi`
+--
+ALTER TABLE `alokasi`
+  ADD PRIMARY KEY (`id_alokasi`);
 
 --
 -- Indexes for table `berita`
@@ -212,34 +257,40 @@ ALTER TABLE `transaksi`
 --
 
 --
+-- AUTO_INCREMENT for table `alokasi`
+--
+ALTER TABLE `alokasi`
+  MODIFY `id_alokasi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id_berita` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_berita` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `donasi`
 --
 ALTER TABLE `donasi`
-  MODIFY `id_donasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_donasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `donatur`
 --
 ALTER TABLE `donatur`
-  MODIFY `kode_donatur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1237;
+  MODIFY `kode_donatur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1239;
 
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_kategori` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id_transaksi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
