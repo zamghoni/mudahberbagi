@@ -7,7 +7,7 @@
 		<div class="analytics-sparkle-line reso-mg-b-30">
 			<div class="analytics-content">
 				<h5><?=$row['judul_donasi']?></h5>
-				<h2>Rp<span class="counter"><?=$row['total']?></span> <span class="tuition-fees">Terkumpul</span></h2>
+				<h2>Rp <span class="counter"><?=number_format($row['total'])?></span> <span class="tuition-fees">Terkumpul</span></h2>
 				<span class="text-success"> <?php
 				if ($row['total'] == null) {
 					echo '0%;';

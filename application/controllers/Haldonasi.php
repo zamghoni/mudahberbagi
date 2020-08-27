@@ -62,7 +62,7 @@ class Haldonasi extends CI_Controller
             'id_donasi' => $this->input->post('id_donasi'),
             'kode_donatur' => $this->input->post('kode_donatur'),
             'id_bank' => $this->input->post('id_bank'),
-            'tgl_transaksi' => date('Y-m-H'),
+            'tgl_transaksi' => date('Y-m-d'),
             'nominal' => str_replace('.', '', $this->input->post('nominal')),
             'dukungan' => $this->input->post('dukungan'),
             'bukti_pembayaran' => '0',

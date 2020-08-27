@@ -69,10 +69,4 @@ date_default_timezone_set('Asia/Jakarta');
 	  return $hasil_rupiah;
   }
 
-  function angka($angka)
-  {
-    $hasil_angka = number_format($angka,0,".",".");
-	  return $hasil_angka;
-  }
-
 ?>
